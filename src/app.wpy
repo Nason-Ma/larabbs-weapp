@@ -22,21 +22,37 @@ setStore(store)
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index'
+      'pages/index',
+      'pages/user'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      list: [{
+        pagePath: 'pages/index',
+        text: '首页',
+        iconPath: 'images/index.png',
+        selectedIconPath: 'images/index_selected.png'
+      }, {
+        pagePath: 'pages/user',
+        text: '我的',
+        iconPath: 'images/user.png',
+        selectedIconPath: 'images/user_selected.png'
+      }],
+      color: '#707070',
+      selectedColor: '#00b5ad'
     }
-  }
+  };
 
   globalData = {
     userInfo: null
-  }
+  };
 
-  constructor () {
+  constructor() {
     super()
     this.use('requestfix')
   }
@@ -45,7 +61,7 @@ export default class extends wepy.app {
     this.testAsync()
   }
 
-  sleep (s) {
+  sleep(s) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('promise resolved')
@@ -53,7 +69,7 @@ export default class extends wepy.app {
     })
   }
 
-  async testAsync () {
+  async testAsync() {
     const data = await this.sleep(3)
     console.log(data)
   }
@@ -64,7 +80,7 @@ export default class extends wepy.app {
       return this.globalData.userInfo
     }
     wepy.getUserInfo({
-      success (res) {
+      success(res) {
         that.globalData.userInfo = res.userInfo
         cb && cb(res.userInfo)
       }
