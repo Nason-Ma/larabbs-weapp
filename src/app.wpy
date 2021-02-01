@@ -77,10 +77,14 @@ export default class extends wepy.app {
   constructor() {
     super()
     this.use('requestfix')
+    // 使 API promise 化
+    this.use('promisify')
   }
 
   onLaunch() {
-    this.testAsync()
+    wepy.login().then(res => {
+      console.log('login: ', res)
+    })
   }
 
   sleep(s) {

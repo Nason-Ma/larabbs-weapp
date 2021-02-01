@@ -1615,6 +1615,11 @@ promise-polyfill@^6.0.2:
   resolved "https://registry.npm.taobao.org/promise-polyfill/download/promise-polyfill-6.1.0.tgz#dfa96943ea9c121fca4de9b5868cb39d3472e057"
   integrity sha1-36lpQ+qcEh/KTem1hoyznTRy4Fc=
 
+promise-polyfill@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.npm.taobao.org/promise-polyfill/download/promise-polyfill-8.2.0.tgz#367394726da7561457aba2133c9ceefbd6267da0"
+  integrity sha1-NnOUcm2nVhRXq6ITPJzu+9YmfaA=
+
 prr@~1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/prr/download/prr-1.0.1.tgz#d3fc114ba06995a45ec6893f484ceb1d78f5f476"
